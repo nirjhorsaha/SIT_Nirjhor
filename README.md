@@ -1,58 +1,53 @@
 # **SIT Blog Platform**
 
 ## **Overview**
-This project is a fully responsive blog platform built using React. It includes a `dynamic blog list page with infinite scrolling`, `a blog details page`, and `a navigation bar`.
+This project is a fully responsive blog platform built using React. It includes a **dynamic blog list page with infinite scrolling**, and **a blog details page**.
 
----
 
-## **Features**
+## **Brief explanation of the implementation.**
 
-### **Navigation Bar**
-- A logo displayed on the left.
-- "Sign In" and "Register" buttons on the right.
-- A bell counter that increments when blog cards are clicked.
-- Fixed and consistent across all pages.
+### Navigation Bar
 
-### **Blog List Page**
-- **Dynamic Blog Cards**:
-  - Each card displays a title, image, short excerpt, category, and publication date.
-  - Includes a "Read More" button linking to the blog details page.
-- **Search Bar**:
-  - Functional search to filter blogs by title or keywords.
-- **Infinite Scroll**:
-  - Automatically loads new blogs as the user scrolls near the bottom of the page.
+The navigation bar stays fixed at the top and includes a **logo**, **Sign In** and **Register** buttons, and a **Bell** icon. When a user clicks on a blog card, the bell counter updates through `Zustand` state.
 
-### **Blog Details Page**
-- **Dynamic Blog Content**:
-  - Displays full title, main image, publication date, category, and complete content.
-- **Reviews Section**:
-  - Displays static reviews with reviewer name, rating, and a comment.
-- **Newsletter Subscription**:
-  - Includes an email input field and a "Subscribe" button.
+### Blog List Page
 
----
+- The blog are fetched from an API `https://jsonplaceholder.org/posts` and dynamically displayed with **titles**, **images**, **categories**, and **dates** within cards.
+  
+- **Infinite scrolling** is implemented so that new blogs load automatically when a user scrolls down.
+  
+- A **search bar** lets users filter blogs by **title** and **category**, 
+  
+### Blog Details Page
 
-## **API Endpoints**
-- `https://jsonplaceholder.typicode.com/posts`.
-- `https://jsonplaceholder.typicode.com/posts/1`
+- When a user clicks **Read More** on a blog card, they’re navigate to the blog details page, which shows the full blog content. This data fetched from the API `
+https://jsonplaceholder.org/posts/${id}`.
 
----
+- The page includes a **reviews** section with reviews to demonstrate how user feedback could look.
+
+- There’s also a simple email subscription form where users can subscribe to a **newsletter**.
+
+### Styling and Responsiveness
+
+Use `Tailwind CSS` to making it responsive across devices like phones and desktop.
+
 
 ## **Technologies Used**
 - **Frontend**: `React.js`, `TypeScript`, `Tailwind CSS`.
 - **State Management**: `Zustand`.
 
----
 
 ## **Setup and Instructions**
 ### **Prerequisites**
-- Node.js .
+- Node.js
 - Package manager: npm or yarn.
+
 
 ### **Steps to Run the Project**
 1. Clone the repository:
    ```bash
    git clone https://github.com/nirjhorsaha/SIT_Nirjhor.git
+
    cd SIT_Nirjhor
    ```
 
@@ -68,3 +63,4 @@ This project is a fully responsive blog platform built using React. It includes 
     npm run dev
     ```
 
+### Live Link: [SIT Blog](https://sit-nirjhor.vercel.app/)
