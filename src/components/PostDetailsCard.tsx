@@ -9,6 +9,10 @@ const PostDetailsCard = () => {
     const [posts, setPosts] = useState<Post | null>(null)
     
     useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+    
+    useEffect(() => {
         const fetchBlogPosts = async () => {
             const respose = await fetch(`https://jsonplaceholder.org/posts/${id}`);
             const data = await respose.json();
