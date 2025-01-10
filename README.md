@@ -33,14 +33,14 @@ This project is a fully responsive blog platform built using React. It includes 
 ---
 
 ## **API Endpoints**
-- `https://jsonplaceholder.typicode.com/posts` – Fetch blog list.
-- `https://jsonplaceholder.typicode.com/posts/1` – Fetch single blog details.
+- `https://jsonplaceholder.typicode.com/posts`.
+- `https://jsonplaceholder.typicode.com/posts/1`
 
 ---
 
 ## **Technologies Used**
 - **Frontend**: `React.js`, `TypeScript`, `Tailwind CSS`.
-- **State Management**: React Hooks (`useState`, `useEffect`).
+- **State Management**: `Zustand`.
 
 ---
 
