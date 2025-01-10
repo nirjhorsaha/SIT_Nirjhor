@@ -12,7 +12,7 @@ const Home = () => {
     useEffect(() => {
         const fetchBlogPosts = async () => {
             setLoading(true); // stop loading
-            await new Promise((resolve) => setTimeout(resolve, 1000));
+            await new Promise((resolve) => setTimeout(resolve, 1000));  // delay for loading
             
             try {
                 const response = await fetch(`https://jsonplaceholder.org/posts`);
@@ -20,7 +20,7 @@ const Home = () => {
 
                 setPosts((prevPosts) => [
                     ...prevPosts,
-                    ...data.slice((page - 1) * 4, page * 4), // Fetch 4 posts at a time
+                    ...data.slice((page - 1) * 4, page * 4), // fetch 4 posts at a time
                 ]);
             } catch (error) {
                 console.error("Error fetching posts:", error);
@@ -28,29 +28,28 @@ const Home = () => {
                 setLoading(false); // stop loading
             }
         };
-
         fetchBlogPosts();
     }, [page]);
 
-    // Handle search query
+    // handle search query
     const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchQuery(event.target.value);
     };
 
-    // Clear the search input field
+    // clear the search input field
     const clearSearch = () => {
         setSearchQuery("");
     };
 
-    // Filter posts based on title and slug
+    // filter posts based on title and slug
     const filteredPosts = posts.filter((post) =>
         post.title.toLowerCase().includes(searchQuery.toLowerCase()),
     );
 
-    // infinite scroll handler
+    // handle infinite scroll
     const handleScroll = () => {
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200 && !loading) {
-            setPage((prevPage) => prevPage + 1); // Load the next page
+            setPage((prevPage) => prevPage + 1); // load the next page
         }
     };
 
@@ -108,6 +107,7 @@ const Home = () => {
                         )}
                     </div>
                 )}
+                {/* show loading message when more posts loaded */}
                 {loading && posts.length > 0 && (
                     <div className="text-center  mt-6 leading-7">
                         More posts loading{" "}

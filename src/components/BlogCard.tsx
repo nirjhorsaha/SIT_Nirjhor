@@ -12,6 +12,7 @@ const BlogCard = ({ post }: BlogCardProps) => {
     const formattedDate = formatPostDate(post?.publishedAt);
     const increment = useReadMoreStore((state) => state.increment);
 
+    // function to truncate the content
     const truncateContent = (content: string, charLimit: number) => {
         if (content.length > charLimit) {
             return content.slice(0, charLimit) + "...";

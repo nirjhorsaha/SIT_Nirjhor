@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import useReadMoreStore from "../utils/zustandStore";
 
 const Navbar = () => {
-    const clickCount = useReadMoreStore((state) => state.clickCount); // clickCount values from store
+    // clickCount values from store
+    const clickCount = useReadMoreStore((state) => state.clickCount);
 
     return (
         <nav className="fixed bg-white py-4 w-full z-20 top-0 start-0 border-b border-[#DBD7D7]">
@@ -16,13 +17,15 @@ const Navbar = () => {
                 <div className="flex items-center gap-2 md:hidden">
                     <button
                         aria-label="Bell notifications"
-                        className="text-gray-800 p-1 rounded-full flex justify-center items-center hover:bg-gray-100 transition">
+                        className="text-gray-800 p-1 rounded-full flex justify-center items-center hover:bg-gray-100 transition"
+                    >
                         <PiBellRingingBold size={24} />
                         <sup className="text-sm font-bold">{clickCount}</sup>
                     </button>
                     <button
                         aria-label="Login"
-                        className="text-gray-800  rounded-full flex justify-center items-center hover:bg-gray-100 transition">
+                        className="text-gray-800  rounded-full flex justify-center items-center hover:bg-gray-100 transition"
+                    >
                         <LuLogIn size={28} />
                     </button>
                 </div>
@@ -32,7 +35,8 @@ const Navbar = () => {
                     <button
                         aria-label="Bell notifications"
                         className="bg-[#D9D9D933] text-gray-800 font-semibold py-2 px-4 
-                        rounded-md flex justify-center items-center hover:bg-gray-100 transition">
+                        rounded-md flex justify-center items-center hover:bg-gray-100 transition"
+                    >
                         Bell Counter <PiBellRingingBold size={20} className="ml-2" />
                         <sup>{clickCount}</sup>
                     </button>
@@ -40,12 +44,14 @@ const Navbar = () => {
                         <button
                             type="button"
                             className="bg-[#E3E3E3] text-gray-800 px-12 rounded-md flex justify-center items-center hover:bg-gray-300 transition border 
-                            border-[#767676]">
+                            border-[#767676]"
+                        >
                             Sign in
                         </button>
                         <button
                             type="button"
-                            className="bg-black text-white px-12 rounded-md flex justify-center items-center hover:bg-gray-800 transition">
+                            className="bg-black text-white px-12 rounded-md flex justify-center items-center hover:bg-gray-800 transition"
+                        >
                             Register
                         </button>
                     </div>
